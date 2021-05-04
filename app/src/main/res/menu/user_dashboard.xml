@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_outline_home_24"
+            android:checked="true"
+            app:itemTextColor="@color/BG1"
+            android:title="Home"/>
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_outline_home_24"
+            android:title="ADD CATEGORY"/>
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_outline_home_24"
+            android:title="SETTINGS"
+            android:enabled="false"/>
+
+    </group>
+
+    <item android:title="SHARE">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_outline_home_24"
+                android:title="SHARE WITH FRIENDS"
+                android:enabled="false"/>
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_outline_home_24"
+                android:title="RATE US"
+                android:enabled="false"/>
+        </menu>
+    </item>
+    <item android:title="ACCOUNT">
+        <menu>
+            <item
+                android:id="@+id/nav_updateProfile"
+                android:icon="@drawable/ic_outline_home_24"
+                android:title="UPDATE PROFILE"
+                android:enabled="false"/>
+            <item
+                android:id="@+id/LogOut"
+                android:icon="@drawable/ic_outline_home_24"
+                android:title="LOGOUT" />
+        </menu>
+    </item>
+</menu>

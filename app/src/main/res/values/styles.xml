@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme">
+    <item name="colorNavigationItem">@color/menu_item_color_state</item>
+    <item name="colorNavigationItemSelected">@color/white</item>
+    <item name="drawableNavigationItemBackground">@drawable/menu_background_color_state</item>
+    </style>
+    <style name="Widget.Custom.NavigationView" parent="Widget.Design.NavigationView">
+        <item name="itemIconTint">?attr/colorNavigationItem</item>
+        <item name="itemTextColor">?attr/colorNavigationItem</item>
+        <item name="itemBackground">?attr/drawableNavigationItemBackground</item>
+    </style>
+</resources>
