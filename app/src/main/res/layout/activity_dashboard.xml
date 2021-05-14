@@ -1,141 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:id="@+id/swipe_to_refresh"
-    android:background="@color/BG"
     android:layout_height="match_parent"
-    tools:context=".Activity.ChannelNewsActivity">
+    android:background="@color/BG"
+    tools:context=".Activity.Dashboard">
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/transparent"
+    app:popupTheme="@style/Theme.MaterialComponents.Light" />
+    </FrameLayout>
+
+<com.google.android.material.navigation.NavigationView
+    android:id="@+id/navigationView"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="right"
+    app:headerLayout="@layout/header_navigation_drawer"
+    app:itemTextColor="@color/BG1"
+    app:itemIconTint="@color/white"
+    android:background="@color/BG"
+    app:menu="@menu/user_dashboard"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="60dp">
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/llayout1"
-            android:background="@color/white"
-            android:orientation="horizontal">
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/home_filled"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/transparent"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:src="@drawable/ic_outline_home_24"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
 
-            <ImageView
-                android:id="@+id/back_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:src="@drawable/general_back_icon" />
-            <TextView
-                android:id="@+id/idTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:padding="10dp"
-                android:layout_marginStart="10dp"
-                android:gravity="center"
-                android:fontFamily="sans-serif-black"
-                android:text="ALL CHANNELS"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
+        <TextView
+            android:id="@+id/homeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:letterSpacing="0.2"
+            android:padding="5dp"
+            android:text="NEWSBIT"
+            android:textAllCaps="true"
+            android:textColor="@color/BG1"
+            android:textSize="25dp" />
 
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/userMenu"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/transparent"
+            android:fontFamily="sans-serif-black"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:src="@drawable/ic_user"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
 
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-
-            android:id="@+id/recycler_view_source_news"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/idTxt"
-            android:layout_alignTop="@id/llayout1"
-            android:layout_alignBottom="@+id/swipe_to_refresh"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="55dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            tools:ignore="NotSibling" />
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:id="@+id/llmenu"-->
-<!--            android:layout_alignParentStart="true"-->
-<!--            android:layout_alignParentBottom="true"-->
-<!--            android:layout_alignParentEnd="true"-->
-<!--            android:layout_marginStart="10dp"-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_marginRight="10dp"-->
-<!--            android:background="@color/transparent"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <androidx.appcompat.widget.AppCompatImageButton-->
-<!--                android:id="@+id/home_filled"-->
-<!--                android:layout_width="60dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:background="@color/transparent"-->
-<!--                android:fontFamily="sans-serif-black"-->
-<!--                android:gravity="center"-->
-<!--                android:scaleX="1.5"-->
-<!--                android:scaleY="1.5"-->
-<!--                android:src="@drawable/ic_baseline_home_24"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="35sp" />-->
-
-<!--            <androidx.appcompat.widget.AppCompatImageButton-->
-<!--                android:id="@+id/home_outline"-->
-<!--                android:layout_width="80dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:background="@color/transparent"-->
-<!--                android:fontFamily="sans-serif-black"-->
-<!--                android:gravity="center"-->
-<!--                android:scaleX="1.5"-->
-<!--                android:scaleY="1.5"-->
-<!--                android:src="@drawable/ic_outline_home_24"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="35sp"-->
-<!--                android:visibility="gone" />-->
-
-<!--            <androidx.appcompat.widget.AppCompatButton-->
-<!--                android:id="@+id/categoriesBtn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:background="@color/transparent"-->
-<!--                android:fontFamily="sans-serif-black"-->
-<!--                android:text="category"-->
-<!--                android:textColor="@color/white" />-->
-
-<!--            <androidx.appcompat.widget.AppCompatButton-->
-<!--                android:id="@+id/channelBtn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:background="@color/transparent"-->
-<!--                android:fontFamily="sans-serif-black"-->
-<!--                android:text="Channels"-->
-<!--                android:textColor="@color/white" />-->
-
-<!--            <androidx.appcompat.widget.AppCompatButton-->
-<!--                android:id="@+id/more_Btn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:background="@color/transparent"-->
-<!--                android:fontFamily="sans-serif-black"-->
-<!--                android:text="Logout"-->
-<!--                android:textColor="@color/white" />-->
-
-<!--            <androidx.appcompat.widget.AppCompatImageButton-->
-<!--                android:id="@+id/dotMenu"-->
-<!--                android:layout_width="50dp"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:background="@color/transparent"-->
-<!--                android:fontFamily="sans-serif-black"-->
-<!--                android:gravity="center"-->
-<!--                android:scaleX="1.5"-->
-<!--                android:scaleY="1.5"-->
-<!--                android:src="@drawable/ic_baseline_more_horiz_24"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="35sp" />-->
-<!--        </LinearLayout>-->
     </RelativeLayout>
 
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:background="@color/transparent"
+            android:orientation="horizontal">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:background="@color/BG"
+                android:layout_height="match_parent"
+                app:itemIconTint="@drawable/navigation_view_colored"
+                app:itemTextColor="@drawable/navigation_view_colored"
+                app:menu="@menu/bottom_navigation" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/fragment_one"
+        android:name="com.example.news.Fragment.Screen1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_screen1"/>
+</androidx.drawerlayout.widget.DrawerLayout>

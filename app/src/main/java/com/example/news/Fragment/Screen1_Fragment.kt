@@ -1,4 +1,4 @@
-package com.example.news.Activity
+package com.example.news.Fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,7 +22,8 @@ class Screen1 : Fragment() {
 
     private fun onBussinessBtn(view: View){
         communicator = activity as Communicator
-        communicator.passDataCom("business")
+        communicator.passDataCom("Business")
+        //Passing data to Dashboard.kt's function
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,23 +42,23 @@ class Screen1 : Fragment() {
         }
         healthBtn.setOnClickListener {
             communicator = activity as Communicator
-            communicator.passDataCom("health")
+            communicator.passDataCom("Health")
         }
         sportsBtn.setOnClickListener {
             communicator = activity as Communicator
-            communicator.passDataCom("sports")
+            communicator.passDataCom("Sports")
         }
         techBtn.setOnClickListener {
             communicator = activity as Communicator
-            communicator.passDataCom("technology")
+            communicator.passDataCom("Technology")
         }
         scienceBtn.setOnClickListener {
             communicator = activity as Communicator
-            communicator.passDataCom("science")
+            communicator.passDataCom("Science")
         }
         entertainmentBtn.setOnClickListener {
             communicator = activity as Communicator
-            communicator.passDataCom("entertainment")
+            communicator.passDataCom("Entertainment")
         }
     }
 }

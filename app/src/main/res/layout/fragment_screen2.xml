@@ -5,7 +5,7 @@
     android:id="@+id/screen2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Screen2">
+    tools:context=".Fragment.Screen2_Fragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_recyclerView"

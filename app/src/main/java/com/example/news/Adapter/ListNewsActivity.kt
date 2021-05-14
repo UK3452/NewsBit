@@ -57,7 +57,7 @@ class ListNewsActivity : AppCompatActivity() {
         if(!isRefreshed){
             dialog.show()
             mService.getNewsFromSource(Common.getNewsAPI(source!!)).enqueue(object :
-                    Callback<News> {
+                Callback<News> {
                 override fun onResponse(call: Call<News>, response: Response<News>) {
                     dialog.dismiss()
 
@@ -86,7 +86,7 @@ class ListNewsActivity : AppCompatActivity() {
         else{
             swipe_to_refresh1.isRefreshing = true
             mService.getNewsFromSource(Common.getNewsAPI(source!!)).enqueue(object :
-                    Callback<News> {
+                Callback<News> {
                 override fun onResponse(call: Call<News>, response: Response<News>) {
                     swipe_to_refresh1.isRefreshing = false
 

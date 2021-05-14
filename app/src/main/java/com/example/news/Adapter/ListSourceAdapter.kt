@@ -2,6 +2,7 @@ package com.example.news.Adapter
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +21,6 @@ class ListSourceAdapter(val context: Context, val website: Website): RecyclerVie
         init {
             itemView.setOnClickListener(this)
         }
-
         fun setItemClickListener(itemClickListener: ItemClickListener) {
             this.itemClickListener = itemClickListener
         }
@@ -29,17 +29,15 @@ class ListSourceAdapter(val context: Context, val website: Website): RecyclerVie
             itemClickListener.onClick(v!!, adapterPosition)
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListSourceViewHolder {
         val inflater = LayoutInflater.from(context)
         val itemView = inflater.inflate(R.layout.source_news_layout, parent, false)
         return ListSourceViewHolder(itemView)
     }
-
     override fun getItemCount(): Int {
+        Log.i("ITEMCCOUNT",website.sources!!.size.toString())
         return website.sources!!.size
     }
-
     override fun onBindViewHolder(holder: ListSourceViewHolder, position: Int) {
         holder.source_title.text = website.sources!![position].name
 

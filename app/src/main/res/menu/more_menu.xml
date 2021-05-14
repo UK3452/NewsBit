@@ -7,26 +7,19 @@
 
     <item
         android:id="@+id/Articles"
-        android:title="ARTICLES"
-        app:showAsAction="never"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/BG1"
-        android:background="@color/transparent"/>
-
+        android:enabled="true"
+        android:icon="@drawable/ic_outline_home_24"
+        android:title="Articles"/>
     <item
         android:id="@+id/Trends"
-        android:title="TRENDS"
-        app:showAsAction="never"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/BG1"
-        android:background="@color/transparent"/>
+        android:enabled="true"
+        android:icon="@drawable/ic_outline_home_24"
+        android:title="Trends"/>
 
     <item
-        android:id="@+id/Explore"
-        android:title="EXPLORE"
-        app:showAsAction="never"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/BG1"
-        android:background="@color/transparent"/>
+        android:id="@+id/explore"
+        android:enabled="true"
+        android:icon="@drawable/ic_outline_home_24"
+        android:title="Explore"/>
 
 </menu>

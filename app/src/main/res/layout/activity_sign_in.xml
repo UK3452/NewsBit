@@ -37,12 +37,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
-            android:autofillHints=""
             android:outlineSpotShadowColor="@color/black"
-            android:tooltipText=""
             app:ccp_arrowSize="30dp"
             app:ccp_textColor="@color/BG1"
-            app:ccp_textSize="18dp"></com.rilixtech.widget.countrycodepicker.CountryCodePicker>
+            app:ccp_textSize="18dp">
+        </com.rilixtech.widget.countrycodepicker.CountryCodePicker>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phone_num"
@@ -169,4 +168,5 @@
         app:layout_constraintStart_toEndOf="@+id/google_login_btn"
         app:layout_constraintTop_toBottomOf="@+id/txtSlogan2"
         app:srcCompat="@drawable/fb" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

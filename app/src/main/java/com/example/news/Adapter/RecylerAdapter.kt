@@ -50,7 +50,7 @@ class RecyclerAdapter(
     }
 
     override fun getItemCount(): Int {
-        return titles.size
+        return titles.size!!
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

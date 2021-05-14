@@ -1,4 +1,4 @@
-package com.example.news.Activity
+package com.example.news.Fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.news.R
 
-class Screen3 : Fragment() {
+class Screen3_Fragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.gson.Gson
 import dmax.dialog.SpotsDialog
 import io.paperdb.Paper
-import kotlinx.android.synthetic.main.activity_dashboard.*
+import kotlinx.android.synthetic.main.activity_all_news_dash.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,7 +30,7 @@ class  ChannelNewsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+        setContentView(R.layout.activity_all_news_dash)
 
 //        mAuth= FirebaseAuth.getInstance()
 //        val currentUser=mAuth.currentUser
@@ -61,10 +61,10 @@ class  ChannelNewsActivity : AppCompatActivity() {
     private fun loadWebSiteService(isRefresh: Boolean) {
         if (!isRefresh) {
             val cache = Paper.book().read<String>("cache")
-            if (cache != null && !cache.isBlank() && cache != null) {
+            if (cache != null && cache.isNotBlank() && cache != null) {
                 /*Read cache*/
                 val webSite = Gson().fromJson<Website>(cache, Website::class.java)
-                adapter = ListSourceAdapter(baseContext, webSite)
+                adapter = ListSourceAdapter(applicationContext, webSite)
                 adapter.notifyDataSetChanged()
                 recycler_view_source_news.adapter = adapter
             }

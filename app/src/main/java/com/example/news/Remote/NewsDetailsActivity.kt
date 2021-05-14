@@ -26,7 +26,6 @@ class NewsDetailsActivity : AppCompatActivity() {
         webView.webViewClient = object  : WebViewClient(){
             override fun onPageFinished(view: WebView?, url: String?) {
                 dialog.dismiss()
-
             }
         }
         if(intent!=null){

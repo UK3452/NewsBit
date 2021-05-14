@@ -1,4 +1,4 @@
-package com.example.news.Activity
+package com.example.news.Fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.news.Activity.BASE_URL
 import com.example.news.Adapter.RecyclerAdapter
 import com.example.news.Api.newsAPI_Json
 import com.example.news.Interface.apiRequest
@@ -24,28 +25,18 @@ import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class Screen2 : Fragment() {
+class Screen2_Fragment : Fragment() {
 
     lateinit var countDownTimer: CountDownTimer
 
     private val placeHolderImage = "https://blog.rahulbhutani.com/wp-content/uploads/2020/05/Screenshot-2018-12-16-at-21.06.29.png"
-
+//    private val placeHolderImage = "@drawable/nlogo"
     private var titlesList = mutableListOf<String>()
     private var descList = mutableListOf<String>()
     private var imagesList = mutableListOf<String>()
     private var linksList = mutableListOf<String>()
     private var publishData = mutableListOf<String>()
-    private var category:String = "topHeadlines"
-
-//    companion object {
-//
-//        @JvmStatic
-//        fun returnCategoryString(cat: String) = Screen2().apply {
-//            arguments = Bundle().apply {
-//                putString("category", cat)
-//            }
-//        }
-//    }
+    private var category:String = "Top Stories"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -101,7 +92,7 @@ class Screen2 : Fragment() {
                 try {
                     var response: newsAPI_Json
 
-                    response=Gson().fromJson<newsAPI_Json>(cache, Screen2::class.java)
+                    response=Gson().fromJson<newsAPI_Json>(cache, Screen2_Fragment::class.java)
                     for (article in response.articles){
                         Log.i("SCREEN2","Result = $article.content")
                         if(article.urlToImage==null){
@@ -132,33 +123,32 @@ class Screen2 : Fragment() {
                     var response: newsAPI_Json
 
                     when(x){
-                        "global news" -> {
+                        "Top Stories" -> {
                             response = api.getGeneralNews()
                             Paper.book().write("cache", Gson().toJson(response))
                         }
-                        "business" -> {
+                        "Business" -> {
                             response = api.getBusinesNews()
                         }
-                        "health" -> {
+                        "Health" -> {
                             response = api.getHealthNews()
                         }
-                        "entertainment" -> {
+                        "Entertainment" -> {
                             response = api.getEntertainmentNews()
                         }
-                        "technology" -> {
+                        "Technology" -> {
                             response = api.getTechNews()
                         }
-                        "science" -> {
+                        "Science" -> {
                             response = api.getScienceNews()
                         }
-                        "sports" -> {
+                        "Sports" -> {
                             response = api.getSportsNews()
                         }
                         else -> {
                             response = api.getNews()
                         }
                     }
-
                     for (article in response.articles){
                         Log.i("Dashboard","Result = $article.content")
                         if(article.urlToImage==null){
